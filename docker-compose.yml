@@ -1,0 +1,35 @@
+version: '3.5'
+
+services:
+  api_devops:
+    container_name: api_devops
+    image: employee
+    build:
+      context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 80:8000
+    depends_on:
+      - tasks-migrate
+    networks:
+      - employee_network
+
+  tasks-migrate:
+    container_name: migrate
+    image: employee
+    build:
+      context: .
+    command: python manage.py migrate
+    volumes:
+      - .:/code
+    networks:
+      - employee_network
+
+networks:
+  employee_network:
+    name: django_employee_network
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
