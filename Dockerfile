@@ -17,4 +17,4 @@ RUN find /code -name '*__pycache__' -delete
 ### upgrade pip
 RUN pip install -U pip
 
-RUN pip install -r requirements.tx
+RUN pip install -r requirements.txt
