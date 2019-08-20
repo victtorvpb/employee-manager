@@ -17,6 +17,7 @@
 
 ## Default Admin User
 username: admin
+
 password: admin
 
 ## Docs api
