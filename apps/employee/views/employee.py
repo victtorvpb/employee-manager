@@ -15,6 +15,22 @@ class EmployeeView(APIView):
         return Response(serializer.data, 200)
 
     def post(self, request):
+        """
+        description: This API deletes/uninstalls a device.
+        parameters:
+        - name: name
+            type: string
+            required: true
+            location: form
+        - name: bloodgroup
+            type: string
+            required: true
+            location: form
+        - name: birthmark
+            type: string
+            required: true
+            location: form
+        """
         serializer = EmployeeSerializer(data=request.data)
 
         if serializer.is_valid():

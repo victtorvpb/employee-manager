@@ -6,7 +6,7 @@ from apps.employee.models import Department, Employee
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
     fields = ('name',)
-    list_display = ('uuid', 'name',)
+    list_display = ('uuid', 'name')
     search_fields = ['name']
 
 

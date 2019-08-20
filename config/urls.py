@@ -22,6 +22,6 @@ schema_view = get_swagger_view(title='Employee API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r'api/v1/', include('apps.employee.urls', namespace='employee')),
+    re_path(r'api/v1', include('apps.employee.urls', namespace='employee')),
     re_path(r'docs/', schema_view),
 ]

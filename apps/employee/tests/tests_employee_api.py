@@ -9,17 +9,17 @@ class TestEmployeeApi(TestCase):
         self.default_data = [
             {
                 "name": "Arnaldo Pereira",
-                "email": "arnaldo@luizalabs.com",
+                "email": "arnaldo@email.com",
                 "department": "Architecture",
             },
             {
                 "name": "Renato Pedigoni",
-                "email": "renato@luizalabs.com",
+                "email": "renato@email.com",
                 "department": "E-commerce",
             },
             {
                 "name": "Thiago Catoto",
-                "email": "catoto@luizalabs.com",
+                "email": "catoto@email.com",
                 "department": "Mobile",
             },
         ]
@@ -46,11 +46,25 @@ class TestEmployeeApi(TestCase):
         self.assertIsNotNone(employee)
 
     def test_delete_employee(self):
-        employee = Employee.objects.get(email='renato@luizalabs.com')
+        employee = Employee.objects.get(email='renato@email.com')
         url = reverse(
             'employee:delete_employee', kwargs={'uuid': str(employee.uuid)}
         )
         response = self.client.delete(url)
-        employee = Employee.objects.filter(email='renato@luizalabs.com')
+        employee = Employee.objects.filter(email='renato@email.com')
         self.assertEqual(response.status_code, 204)
+        self.assertEqual(employee.count(), 0)
+
+    def test_post_employee_invalid_department(self):
+        data_post = {
+            "name": "Victor",
+            "email": "victor@victor.com",
+            "department": "teste",
+        }
+        url = reverse('employee:employee_list')
+        response = self.client.post(url, data=data_post)
+        employee = Employee.objects.filter(
+            name=data_post['name'], email=data_post['email']
+        )
+        self.assertEqual(response.status_code, 404)
         self.assertEqual(employee.count(), 0)

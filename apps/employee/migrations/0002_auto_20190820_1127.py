@@ -5,17 +5,17 @@ from django.db import migrations
 default_data = [
     {
         "name": "Arnaldo Pereira",
-        "email": "arnaldo@luizalabs.com",
+        "email": "arnaldo@email.com",
         "department": "Architecture",
     },
     {
         "name": "Renato Pedigoni",
-        "email": "renato@luizalabs.com",
+        "email": "renato@email.com",
         "department": "E-commerce",
     },
     {
         "name": "Thiago Catoto",
-        "email": "catoto@luizalabs.com",
+        "email": "catoto@email.com",
         "department": "Mobile",
     },
 ]
