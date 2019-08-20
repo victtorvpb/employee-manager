@@ -1,3 +1,5 @@
+import uuid
+
 from django_extensions.db.models import TimeStampedModel
 from django.db import models
 from apps.employee.utils.email_field import EmailField
@@ -10,3 +12,4 @@ class Employee(TimeStampedModel):
     department = models.ForeignKey(
         Department, on_delete=models.PROTECT, related_name='employees'
     )
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
