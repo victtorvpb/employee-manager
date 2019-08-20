@@ -4,6 +4,8 @@ services:
   employee:
     container_name: employee
     image: employee
+    environment:
+      - CODACY_PROJECT_TOKEN
     build:
       context: .
     command: python manage.py runserver 0.0.0.0:8000
