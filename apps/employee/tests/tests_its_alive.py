@@ -3,7 +3,6 @@ from django.urls import reverse
 
 
 class TestItsAlive(TestCase):
-
     def test_its_alive(self):
         url = reverse('employee:its_alive')
         response = self.client.get(url)
