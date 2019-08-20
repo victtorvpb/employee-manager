@@ -30,7 +30,7 @@ Example object to post:
 {
     "department": "Architecture",
     "name": "Name",
-    "email": "admin@admin.com",
+    "email": "admin@admin.com"
 }
 ```
 
