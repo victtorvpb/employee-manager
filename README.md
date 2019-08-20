@@ -21,14 +21,14 @@
 Access [http://localhost/docs/](http://localhost/docs/) to list documentation api
 
 Exemple object to post:
-    ```
-    {
-        "department": "Architecture",
-        "name": "Name",
-        "email": "admin@admin.com",
-    }
 
-    ```
+```
+{
+    "department": "Architecture",
+    "name": "Name",
+    "email": "admin@admin.com",
+}
+```
 
 ## Execute test
 Execute tests and generate docs coverage in folder htmlcov
