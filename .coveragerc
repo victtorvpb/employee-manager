@@ -14,4 +14,11 @@ omit = */tests/*,
     source =
         apps
 [report]
-    omit = .venv, admin.py, 
+    omit = */tests/*, 
+        .venv,
+        */admin.py, 
+        */migrations, 
+        config, 
+        *__init__.py,
+        manage.py
+        */apps.py
