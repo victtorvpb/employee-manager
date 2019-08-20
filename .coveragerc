@@ -1,0 +1,17 @@
+[run]
+branch = True
+omit = */tests/*, 
+        .venv,
+        */admin.py, 
+        */migrations, 
+        config, 
+        *__init__.py,
+        manage.py
+        */apps.py
+
+
+[paths]
+    source =
+        apps
+[report]
+    omit = .venv, admin.py, 
