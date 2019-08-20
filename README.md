@@ -38,7 +38,7 @@ Example url to delete
 
 http://localhost/api/v1/employee/baabf6bd-e4cb-4d09-90d4-6181238c508c/
 
-Example to get:
+URL to list employee:
 
 http://localhost/api/v1/employee/
 
