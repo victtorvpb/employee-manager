@@ -8,4 +8,4 @@ class TestItsAlive(TestCase):
         url = reverse('employee:its_alive')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json, {'message': 'its_alive'})
+        self.assertEqual(response.json(), {'message': 'its_alive'})
