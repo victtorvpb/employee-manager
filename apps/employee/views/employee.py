@@ -13,7 +13,7 @@ class EmployeeView(APIView):
 
         serializer = EmployeeSerializer(employees, many=True)
 
-        return Response(serializer.data)
+        return Response(serializer.data, 200)
 
     def post(self, request):
         serializer = EmployeeSerializer(data=request.data)
@@ -25,7 +25,7 @@ class EmployeeView(APIView):
 
             serializer.save(department=department)
 
-            return Response(serializer.data)
+            return Response(serializer.data, 200)
         return Response(serializer.errors, 400)
 
     @classmethod
