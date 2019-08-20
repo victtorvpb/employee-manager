@@ -13,7 +13,11 @@
 
 * Run project `make start` or `docker-compose up`
 
-* Access [http://localhost/api/v1/its_alive/](http://localhost/api/v1/its_alive/) to list urls api
+* Access [http://localhost/api/v1/its_alive/](http://localhost/api/v1/its_alive/)
+
+## Default Admin User
+username: admin
+password: admin
 
 ## Docs api
 
