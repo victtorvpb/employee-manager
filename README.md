@@ -24,7 +24,7 @@ password: admin
 
 Access [http://localhost/docs/](http://localhost/docs/) to list documentation api
 
-Exemple object to post:
+Example object to post:
 
 ```
 {
@@ -33,6 +33,14 @@ Exemple object to post:
     "email": "admin@admin.com",
 }
 ```
+
+Example url to delete
+
+http://localhost/api/v1/employee/baabf6bd-e4cb-4d09-90d4-6181238c508c/
+
+Example to get:
+
+http://localhost/api/v1/employee/
 
 ## Execute test
 Execute tests and generate docs coverage in folder htmlcov
