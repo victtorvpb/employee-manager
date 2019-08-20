@@ -39,7 +39,11 @@ INSTALLED_DEFAULT = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_LIBS = ['rest_framework', 'django_extensions']
+INSTALLED_LIBS = [
+    'rest_framework',
+    'django_extensions',
+    'rest_framework_swagger'
+]
 
 INSTALLED_MY_APPS = ['apps.employee']
 
@@ -123,3 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+REST_FRAMEWORK = {
+  'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}

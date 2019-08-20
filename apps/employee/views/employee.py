@@ -7,8 +7,8 @@ from apps.employee.serializers import EmployeeSerializer
 
 
 class EmployeeView(APIView):
-    def get(self, request, uuid=None):
- 
+    def get(self, request):
+
         if uuid:
             employee = get_object_or_404(Employee, uuid=uuid)
             serializer = EmployeeSerializer(employee)
@@ -18,7 +18,7 @@ class EmployeeView(APIView):
 
         return Response(serializer.data, 200)
 
-    def post(self, request, uuid=None):
+    def post(self, request):
         serializer = EmployeeSerializer(data=request.data)
 
         if serializer.is_valid():
@@ -31,10 +31,8 @@ class EmployeeView(APIView):
             return Response(serializer.data, 200)
         return Response(serializer.errors, 400)
 
-    @classmethod
-    def get_department(cls, department_name):
-        return
 
+class EmployeeViewDelete(APIView):
     def delete(self, request, uuid):
         employee = get_object_or_404(Employee, uuid=uuid)
         employee.delete()
