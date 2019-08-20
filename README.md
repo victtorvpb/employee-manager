@@ -6,13 +6,12 @@
 ## Requirements
 * docker
 * docker-compose
+* Make
 
 
 ## Execute project
 
-* Pre populate database `python manage.py loaddata dump_free_fair.json` with data from the city hall
-
-* Run server `python manage.py runserver`
+* Run project `make start` or `docker-compose up`
 
 * Access [http://localhost/api/v1/its_alive/](http://localhost/api/v1/its_alive/) to list urls api
 
