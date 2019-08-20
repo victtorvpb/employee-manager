@@ -42,7 +42,7 @@ INSTALLED_DEFAULT = [
 INSTALLED_LIBS = [
     'rest_framework',
     'django_extensions',
-    'rest_framework_swagger'
+    'rest_framework_swagger',
 ]
 
 INSTALLED_MY_APPS = ['apps.employee']
@@ -130,5 +130,5 @@ STATIC_URL = '/static/'
 
 
 REST_FRAMEWORK = {
-  'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }

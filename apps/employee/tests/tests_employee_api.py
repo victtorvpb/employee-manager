@@ -5,24 +5,23 @@ from apps.employee.models import Employee
 
 
 class TestEmployeeApi(TestCase):
-
     def setUp(self):
         self.default_data = [
             {
                 "name": "Arnaldo Pereira",
                 "email": "arnaldo@luizalabs.com",
-                "department": "Architecture"
+                "department": "Architecture",
             },
             {
                 "name": "Renato Pedigoni",
                 "email": "renato@luizalabs.com",
-                "department": "E-commerce"
+                "department": "E-commerce",
             },
             {
                 "name": "Thiago Catoto",
                 "email": "catoto@luizalabs.com",
-                "department": "Mobile"
-            }
+                "department": "Mobile",
+            },
         ]
 
     def test_list_employee(self):
@@ -36,19 +35,21 @@ class TestEmployeeApi(TestCase):
         data_post = {
             "name": "Victor",
             "email": "victor@victor.com",
-            "department": "Architecture"
+            "department": "Architecture",
         }
         url = reverse('employee:employee_list')
         response = self.client.post(url, data=data_post)
         employee = Employee.objects.get(
-            name=data_post['name'], email=data_post['email'])
+            name=data_post['name'], email=data_post['email']
+        )
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(employee)
 
     def test_delete_employee(self):
         employee = Employee.objects.get(email='renato@luizalabs.com')
-        url = reverse('employee:delete_employee', kwargs={
-                      'uuid': str(employee.uuid)})
+        url = reverse(
+            'employee:delete_employee', kwargs={'uuid': str(employee.uuid)}
+        )
         response = self.client.delete(url)
         employee = Employee.objects.filter(email='renato@luizalabs.com')
         self.assertEqual(response.status_code, 204)

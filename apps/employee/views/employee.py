@@ -9,7 +9,6 @@ from apps.employee.serializers import EmployeeSerializer
 class EmployeeView(APIView):
     def get(self, request):
 
-     
         employees = Employee.objects.all()
         serializer = EmployeeSerializer(employees, many=True)
 

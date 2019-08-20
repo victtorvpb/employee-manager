@@ -11,16 +11,33 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
             name='Department',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
-                ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
+                (
+                    'id',
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
+                (
+                    'created',
+                    django_extensions.db.fields.CreationDateTimeField(
+                        auto_now_add=True, verbose_name='created'
+                    ),
+                ),
+                (
+                    'modified',
+                    django_extensions.db.fields.ModificationDateTimeField(
+                        auto_now=True, verbose_name='modified'
+                    ),
+                ),
                 ('name', models.CharField(max_length=200)),
                 ('uuid', models.UUIDField(default=uuid.uuid4, editable=False)),
             ],
@@ -33,13 +50,43 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Employee',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created', django_extensions.db.fields.CreationDateTimeField(auto_now_add=True, verbose_name='created')),
-                ('modified', django_extensions.db.fields.ModificationDateTimeField(auto_now=True, verbose_name='modified')),
+                (
+                    'id',
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name='ID',
+                    ),
+                ),
+                (
+                    'created',
+                    django_extensions.db.fields.CreationDateTimeField(
+                        auto_now_add=True, verbose_name='created'
+                    ),
+                ),
+                (
+                    'modified',
+                    django_extensions.db.fields.ModificationDateTimeField(
+                        auto_now=True, verbose_name='modified'
+                    ),
+                ),
                 ('name', models.CharField(max_length=200)),
-                ('email', apps.employee.utils.email_field.EmailField(max_length=254, unique=True)),
+                (
+                    'email',
+                    apps.employee.utils.email_field.EmailField(
+                        max_length=254, unique=True
+                    ),
+                ),
                 ('uuid', models.UUIDField(default=uuid.uuid4, editable=False)),
-                ('department', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='employees', to='employee.Department')),
+                (
+                    'department',
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name='employees',
+                        to='employee.Department',
+                    ),
+                ),
             ],
             options={
                 'ordering': ('-modified', '-created'),

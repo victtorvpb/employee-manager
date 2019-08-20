@@ -6,18 +6,18 @@ default_data = [
     {
         "name": "Arnaldo Pereira",
         "email": "arnaldo@luizalabs.com",
-        "department": "Architecture"
+        "department": "Architecture",
     },
     {
         "name": "Renato Pedigoni",
         "email": "renato@luizalabs.com",
-        "department": "E-commerce"
+        "department": "E-commerce",
     },
     {
         "name": "Thiago Catoto",
         "email": "catoto@luizalabs.com",
-        "department": "Mobile"
-    }
+        "department": "Mobile",
+    },
 ]
 
 
@@ -28,7 +28,8 @@ def insert_data(apps, schema_editor):
     for item in default_data:
         department = Department.objects.create(name=item['department'])
         Employee.objects.create(
-            name=item['name'], email=item['email'], department=department)
+            name=item['name'], email=item['email'], department=department
+        )
 
 
 def delete_data(apps, schema_editor):
@@ -37,18 +38,14 @@ def delete_data(apps, schema_editor):
 
     for item in default_data:
         Employee.objects.filter(
-            name=item['name'], email=item['email']).delete()
+            name=item['name'], email=item['email']
+        ).delete()
 
         Department.objects.filter(name=item['department']).delete()
-        
 
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('employee', '0001_initial'),
-    ]
+    dependencies = [('employee', '0001_initial')]
 
-    operations = [
-        migrations.RunPython(insert_data, reverse_code=delete_data),
-    ]
+    operations = [migrations.RunPython(insert_data, reverse_code=delete_data)]
