@@ -6,14 +6,14 @@ from apps.employee.models import Department, Employee
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
     fields = ('name',)
-    list_display = ('name',)
+    list_display = ('uuid', 'name',)
     search_fields = ['name']
 
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
     fields = ('name', 'email', 'department')
-    list_display = ('name', 'email', 'get_department_name')
+    list_display = ('uuid', 'name', 'email', 'get_department_name')
     search_fields = ['name', 'email', 'department__name']
 
     def get_department_name(self, obj):
