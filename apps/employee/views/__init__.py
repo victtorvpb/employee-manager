@@ -1,1 +1,1 @@
-# from its_alive import its_alive
+from .its_alive import its_alive  # noqa
