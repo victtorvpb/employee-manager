@@ -31,6 +31,9 @@ formatter:
 	make exec COMMAND="black . -S -v --py36 --exclude .venv -l 79 "
 	make pep8
 
+install-git:
+	make exec COMMAND="apt-get install git -y"
+
 coverage:
 	make exec COMMAND="coverage xml"
 	make exec COMMAND="python-codacy-coverage -r coverage.xml"
