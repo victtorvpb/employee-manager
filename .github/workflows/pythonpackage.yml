@@ -31,3 +31,8 @@ jobs:
     - name: Test with pytest
       run: |
         make test
+    - name: Coverage
+      run: |
+        make coverage
+      env:
+        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
