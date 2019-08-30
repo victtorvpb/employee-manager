@@ -33,6 +33,5 @@ jobs:
         make test
     - name: Coverage
       run: |
+        export CODACY_PROJECT_TOKEN=${{ secrets.CODACY_PROJECT_TOKEN }}
         make coverage
-      env:
-        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
