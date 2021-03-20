@@ -20,7 +20,7 @@ flake8==3.7.8
 idna==2.8
 importlib-metadata==0.19
 itypes==1.1.0
-jinja2==2.10.1
+jinja2==2.11.3
 markupsafe==1.1.1
 mccabe==0.6.1
 more-itertools==7.2.0
