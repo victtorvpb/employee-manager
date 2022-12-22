@@ -1,4 +1,4 @@
-name: "Danger JS"
+name: "Danger"
 on: [pull_request]
 
 jobs:
